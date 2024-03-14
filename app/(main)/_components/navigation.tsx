@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { ElementRef, useEffect, useRef, useState } from "react";
 
 import { useMediaQuery } from "usehooks-ts";
+import { UserItem } from "./user-item";
 
 export const Navigation = () => {
   const pathname = usePathname();
@@ -106,7 +107,6 @@ export const Navigation = () => {
           isMobile && "w-0"
         )}
       >
-        Navigation
         <div
           role="button"
           onClick={collapse}
@@ -118,7 +118,7 @@ export const Navigation = () => {
           <ChevronsLeft className="h-6 w-6" />
         </div>
         <div>
-          <p>Action Items</p>
+          <UserItem />
         </div>
         <div className="mt-4">
           <p>Documents</p>
