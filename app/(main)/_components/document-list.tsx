@@ -72,7 +72,8 @@ export const DocumentList = ({
         <div key={document._id}>
           <Item
             id={document._id}
-            onClick={() => onRedirect(document._id)}
+            // TODO: UNCOMMENT OUT LATER COS NOW NO ROUTE
+            // onClick={() => onRedirect(document._id)}
             label={document.title}
             icon={FileIcon}
             documentIcon={document.icon}
@@ -82,7 +83,7 @@ export const DocumentList = ({
             expanded={expanded[document._id]}
           />
           {expanded[document._id] && (
-            // recursion is here, rerender DocumentList component
+            // recursion of DocumentList component here
             <DocumentList parentDocumentId={document._id} level={level + 1} />
           )}
         </div>
