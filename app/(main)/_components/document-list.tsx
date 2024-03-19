@@ -73,7 +73,7 @@ export const DocumentList = ({
           <Item
             id={document._id}
             // TODO: UNCOMMENT OUT LATER COS NOW NO ROUTE
-            // onClick={() => onRedirect(document._id)}
+            onClick={() => onRedirect(document._id)}
             label={document.title}
             icon={FileIcon}
             documentIcon={document.icon}
