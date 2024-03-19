@@ -20,6 +20,9 @@ import { UserItem } from "./user-item";
 import { useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 
+import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
+
 import {
   Popover,
   PopoverTrigger,
@@ -33,8 +36,10 @@ import { DropdownMenuSeparator } from "@radix-ui/react-dropdown-menu";
 import { TrashBox } from "./trashbox";
 
 export const Navigation = () => {
+  const search = useSearch();
+  const settings = useSettings();
   const pathname = usePathname();
-  const isMobile = useMediaQuery("(max-width:768px)");
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   // const documents = useQuery(api.documents.get);
   const create = useMutation(api.documents.create);
@@ -154,8 +159,8 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          <Item label="Search" icon={Search} isSearch onClick={() => {}} />
-          <Item label="Settings" icon={Settings} onClick={() => {}} />
+          <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
+          <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
           <Item onClick={handleCreate} label="New page" icon={PlusCircle} />
         </div>
         <div className="mt-4">
