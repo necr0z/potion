@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { EdgeStoreProvider } from "@/lib/edgestore";
 import "./globals.css";
 
 import { ConvexClientProvider } from "@/components/providers/convex-provider";
@@ -39,17 +40,19 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ConvexClientProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-            storageKey="potion-theme"
-          >
-            <Toaster position="bottom-center" />
-            <ModalProvider />
-            {children}
-          </ThemeProvider>
+          <EdgeStoreProvider>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+              storageKey="potion-theme"
+            >
+              <Toaster position="bottom-center" />
+              <ModalProvider />
+              {children}
+            </ThemeProvider>
+          </EdgeStoreProvider>
         </ConvexClientProvider>
       </body>
     </html>
