@@ -9,7 +9,7 @@ import {
   Settings,
   Trash,
 } from "lucide-react";
-import { useParams, usePathname } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 import { ElementRef, useEffect, useRef, useState } from "react";
@@ -37,6 +37,7 @@ import { TrashBox } from "./trashbox";
 import Navbar from "./navbar";
 
 export const Navigation = () => {
+  const router = useRouter();
   const params = useParams();
   const search = useSearch();
   const settings = useSettings();
@@ -131,7 +132,9 @@ export const Navigation = () => {
   }, [pathname, isMobile]);
 
   const handleCreate = () => {
-    const promise = create({ title: "Untitled" });
+    const promise = create({ title: "Untitled" }).then((documentId) =>
+      router.push(`/documents/${documentId}`)
+    );
     toast.promise(promise, {
       loading: "Creating a new note CAN YOU FUCKING WAIT",
       success: "New note created! we coo",

@@ -24,7 +24,7 @@ export const Banner = ({ documentId }: BannerProps) => {
       success: "Document successfully remove",
       error: "Document failed to remove",
     });
-    router.push("/documents");
+  router.push("/documents");
   };
 
   const onRestore = () => {
