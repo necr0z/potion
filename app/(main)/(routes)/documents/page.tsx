@@ -18,7 +18,7 @@ const DocumentsPage = () => {
       router.push(`/documents/${documentId}`)
     );
     toast.promise(promise, {
-      loading: "Creating a new note CAN YOU FUCKING WAIT",
+      loading: "Creating a new note CAN YOU PLEASE WAIT",
       success: "New note created! we coo",
       error: "Oh no, im a failure :(",
     });

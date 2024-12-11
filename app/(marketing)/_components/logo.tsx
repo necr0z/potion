@@ -11,14 +11,14 @@ const Logo = () => {
   return (
     <div className="hidden md:flex items-center gap-x-2">
       <Image
-        src="/jotion-logo.svg"
+        src="/potion-logo.svg"
         height="40"
         width="40"
         alt="Logo"
         className="dark:hidden"
       />
       <Image
-        src="/jotion-logo-dark.svg"
+        src="/potion-logo-dark.svg"
         height="40"
         width="40"
         alt="Logo"

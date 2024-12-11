@@ -33,7 +33,7 @@ export const Navbar = () => {
               </Button>
             </SignInButton>
             <SignInButton mode="modal">
-              <Button size="sm">Get Potion free my nig</Button>
+              <Button size="sm">Get Potion free my homie</Button>
             </SignInButton>
           </>
         )}

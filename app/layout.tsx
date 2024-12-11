@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     icon: [
       {
         media: "(prefers-color-scheme: light",
-        url: "/jotion-logo.svg",
-        href: "/jotion-logo.svg",
+        url: "/potion-logo.svg",
+        href: "/potion-logo.svg",
       },
       {
         media: "(prefers-color-scheme: dark",
-        url: "/jotion-logo-dark.svg",
-        href: "/jotion-logo-dark.svg",
+        url: "/potion-logo-dark.svg",
+        href: "/potion-logo-dark.svg",
       },
     ],
   },
